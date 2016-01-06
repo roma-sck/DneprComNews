@@ -18,12 +18,12 @@ public class NewsListAdapter extends BaseAdapter {
 
     private List<DneprComNews> mListData;
     private LayoutInflater mInflater;
-    private Typeface mTypeface;
+//    private Typeface mTypeface;
 
     public NewsListAdapter(Context context, List<DneprComNews> mListData) {
         this.mListData = mListData;
         mInflater = LayoutInflater.from(context);
-        this.mTypeface = Typeface.MONOSPACE;
+//        this.mTypeface = Typeface.MONOSPACE;
     }
 
     @Override
@@ -56,8 +56,8 @@ public class NewsListAdapter extends BaseAdapter {
 
         DneprComNews item = mListData.get(position);
 
-        news.newsDateTime.setTypeface(mTypeface);
-        news.newsTitle.setTypeface(mTypeface);
+//        news.newsDateTime.setTypeface(mTypeface);
+//        news.newsTitle.setTypeface(mTypeface);
 
         news.newsTitle.setText(item.getNewsTitle().getText());
         news.newsDateTime.setText(item.getNewsDateTime());
