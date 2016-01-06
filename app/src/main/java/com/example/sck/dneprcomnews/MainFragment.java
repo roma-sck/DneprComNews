@@ -51,6 +51,11 @@ public class MainFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Successful retrofit responce - shows mNewsList
+     *
+     * @param response retrofit responce
+     */
     public void onEvent(Response<NewsObject> response) {
         mProgressBar.setVisibility(View.GONE);
 
@@ -59,7 +64,14 @@ public class MainFragment extends Fragment {
         mNewsListView.setAdapter(new NewsListAdapter(getActivity(), mNewsList));
     }
 
+    /**
+     * Unsuccessful retrofit responce
+     *
+     * @param errMsg retrofit error message
+     */
     public void onEvent(String errMsg) {
+        mProgressBar.setVisibility(View.GONE);
+
         Toast.makeText(getActivity(), errMsg, Toast.LENGTH_LONG).show();
     }
 

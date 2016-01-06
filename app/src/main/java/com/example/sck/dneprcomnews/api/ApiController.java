@@ -17,21 +17,21 @@ public final class ApiController {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-    // Create an instance of our GitHub API interface.
+    // Create an instance of our DneprComApi API interface.
     private static final DneprComApi service = retrofit.create(DneprComApi.class);
 
 
     public static void getNews() {
-
-        // Create a call instance for looking up Retrofit contributors.
+        // Create a call instance for getting news.
         Call<NewsObject> call = service.getFreshNews();
 
         call.enqueue(new Callback<NewsObject>() {
+            // Successful HTTP response.
             @Override
             public void onResponse(Response<NewsObject> response, Retrofit retrofit) {
                 EventBus.getDefault().post(response);
             }
-
+            // Unsuccessful HTTP response due to network failure, non-2XX status code, or unexpected exception.
             @Override
             public void onFailure(Throwable t) {
                 EventBus.getDefault().post(t.getMessage());
