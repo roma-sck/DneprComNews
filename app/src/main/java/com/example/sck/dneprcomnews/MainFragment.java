@@ -2,12 +2,12 @@ package com.example.sck.dneprcomnews;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.sck.dneprcomnews.adapter.NewsListAdapter;
 import com.example.sck.dneprcomnews.api.ApiController;
@@ -72,7 +72,15 @@ public class MainFragment extends Fragment {
     public void onEvent(String errMsg) {
         mProgressBar.setVisibility(View.GONE);
 
-        Toast.makeText(getActivity(), errMsg, Toast.LENGTH_LONG).show();
+        showErrorDialog(errMsg);
+    }
+
+    private void showErrorDialog(String err) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.retrofit_err_diag_title);
+        builder.setMessage(getString(R.string.retrofit_err_diag_message) + err);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     @Override

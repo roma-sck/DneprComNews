@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">DneprComNews</string>
+    <string name="app_name">DneprCom News</string>
     <string name="action_settings">Settings</string>
+
+    <string name="retrofit_err_diag_title">Error</string>
+    <string name="retrofit_err_diag_message">"WTF??? \nPlease check your internet connection and try again.\n\n"</string>
+
 </resources>
