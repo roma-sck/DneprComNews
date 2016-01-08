@@ -1,5 +1,7 @@
 package com.example.sck.dneprcomnews;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,10 +24,19 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, R.string.snackbar_text, Snackbar.LENGTH_LONG)
+                        .setAction(R.string.snackbar_action_name, null).show();
+                createSendMailIntent();
             }
         });
+    }
+
+    private void createSendMailIntent() {
+        Intent mailIntent = new Intent(Intent.ACTION_SENDTO,
+                Uri.fromParts(getString(R.string.mailto), getString(R.string.my_mail), null));
+        mailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
+        mailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_text));
+        startActivity(Intent.createChooser(mailIntent, getString(R.string.email_dialog_header)));
     }
 
     @Override
