@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createSendMailIntent() {
         Intent mailIntent = new Intent(Intent.ACTION_SENDTO,
-                Uri.fromParts(getString(R.string.mailto), getString(R.string.my_mail), null));
+                Uri.fromParts(getString(R.string.email_mailto), getString(R.string.email_my_mail), null));
         mailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
         mailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_text));
         startActivity(Intent.createChooser(mailIntent, getString(R.string.email_dialog_header)));
@@ -53,11 +54,25 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_settings:
+                return true;
+            case R.id.action_about:
+                createAboutDialog();
+                break;
+            case R.id.action_exit:
+                finish();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void createAboutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.dialog_title_about);
+        builder.setMessage(R.string.dialog_msg_about);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
