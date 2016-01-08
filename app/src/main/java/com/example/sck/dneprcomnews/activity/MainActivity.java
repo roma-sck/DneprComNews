@@ -1,4 +1,4 @@
-package com.example.sck.dneprcomnews;
+package com.example.sck.dneprcomnews.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.sck.dneprcomnews.R;
 
 public class MainActivity extends AppCompatActivity {
 

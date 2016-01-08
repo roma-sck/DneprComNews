@@ -1,4 +1,4 @@
-package com.example.sck.dneprcomnews;
+package com.example.sck.dneprcomnews.activity;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.sck.dneprcomnews.R;
 import com.example.sck.dneprcomnews.adapter.NewsListAdapter;
 import com.example.sck.dneprcomnews.api.ApiController;
 import com.example.sck.dneprcomnews.models.DneprComNews;

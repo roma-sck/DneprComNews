@@ -1,7 +1,6 @@
 package com.example.sck.dneprcomnews.adapter;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
@@ -20,13 +19,11 @@ public class NewsListAdapter extends BaseAdapter {
     private List<DneprComNews> mListData;
     private LayoutInflater mInflater;
     private Context mContext;
-//    private Typeface mTypeface;
 
     public NewsListAdapter(Context context, List<DneprComNews> mListData) {
         this.mListData = mListData;
         mInflater = LayoutInflater.from(context);
         mContext = context;
-//        this.mTypeface = Typeface.MONOSPACE;
     }
 
     @Override
@@ -58,9 +55,6 @@ public class NewsListAdapter extends BaseAdapter {
         }
 
         DneprComNews item = mListData.get(position);
-
-//        news.newsDateTime.setTypeface(mTypeface);
-//        news.newsTitle.setTypeface(mTypeface);
 
         news.newsTitle.setText(item.getNewsTitle().getText());
         news.newsDateTime.setText(item.getNewsDateTime());
