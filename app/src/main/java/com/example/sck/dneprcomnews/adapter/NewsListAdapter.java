@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.sck.dneprcomnews.R;
 import com.example.sck.dneprcomnews.models.DneprComNews;
 
@@ -18,11 +19,13 @@ public class NewsListAdapter extends BaseAdapter {
 
     private List<DneprComNews> mListData;
     private LayoutInflater mInflater;
+    private Context mContext;
 //    private Typeface mTypeface;
 
     public NewsListAdapter(Context context, List<DneprComNews> mListData) {
         this.mListData = mListData;
         mInflater = LayoutInflater.from(context);
+        mContext = context;
 //        this.mTypeface = Typeface.MONOSPACE;
     }
 
@@ -62,7 +65,8 @@ public class NewsListAdapter extends BaseAdapter {
         news.newsTitle.setText(item.getNewsTitle().getText());
         news.newsDateTime.setText(item.getNewsDateTime());
 
-        news.newsImage.setImageResource(R.drawable.temp_img);
+//        news.newsImage.setImageResource(R.drawable.temp_img);
+        Glide.with(mContext).load(item.getNewsImage().getSrc()).into(news.newsImage);
 
         return view;
     }
