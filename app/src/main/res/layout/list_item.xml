@@ -6,8 +6,8 @@
     <ImageView
         android:id="@+id/newsImage"
         android:contentDescription="newsImage"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         />
 
     <TextView
@@ -19,7 +19,9 @@
         android:text="Title Title Title Title Title Title Title Title Title Title Title Title "
         android:layout_below="@+id/newsDateTime"
         android:layout_toRightOf="@+id/newsImage"
-        android:layout_toEndOf="@+id/newsImage" />
+        android:layout_toEndOf="@+id/newsImage"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
 
     <TextView
         android:layout_width="wrap_content"

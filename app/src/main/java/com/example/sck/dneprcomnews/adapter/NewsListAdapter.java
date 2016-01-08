@@ -65,8 +65,13 @@ public class NewsListAdapter extends BaseAdapter {
         news.newsTitle.setText(item.getNewsTitle().getText());
         news.newsDateTime.setText(item.getNewsDateTime());
 
-//        news.newsImage.setImageResource(R.drawable.temp_img);
-        Glide.with(mContext).load(item.getNewsImage().getSrc()).into(news.newsImage);
+        String url = item.getNewsImage().getSrc();
+        Glide.with(mContext)
+                .load(url)
+                .centerCrop()
+                .placeholder(R.drawable.img_placeholdr)
+                .crossFade()
+                .into(news.newsImage);
 
         return view;
     }
