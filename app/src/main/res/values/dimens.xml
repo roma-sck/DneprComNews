@@ -7,7 +7,7 @@
     <dimen name="list_title_text_size">13sp</dimen>
     <dimen name="list_datetime_text_size">12sp</dimen>
     <dimen name="list_title_text_margin">15dp</dimen>
-    <dimen name="list_datetime_text_margin">42dp</dimen>
+    <dimen name="list_datetime_text_margin">10dp</dimen>
     <dimen name="list_image_size">70dp</dimen>
 
 </resources>
