@@ -46,8 +46,9 @@ public class NewsListAdapter extends BaseAdapter {
         if (view == null) {
             view = mInflater.inflate(R.layout.list_item, null);
             news = new NewsItem();
-            news.newsTitle = (TextView) view.findViewById(R.id.newsTitle);
             news.newsDateTime = (TextView) view.findViewById(R.id.newsDateTime);
+            news.newsTitle = (TextView) view.findViewById(R.id.newsTitle);
+            news.newsDescription = (TextView) view.findViewById(R.id.newsDescription);
             news.newsImage = (ImageView) view.findViewById(R.id.newsImage);
             view.setTag(news);
         } else {
@@ -56,8 +57,9 @@ public class NewsListAdapter extends BaseAdapter {
 
         DneprComNews item = mListData.get(position);
 
-        news.newsTitle.setText(item.getNewsTitle().getText());
         news.newsDateTime.setText(item.getNewsDateTime());
+        news.newsTitle.setText(item.getNewsTitle().getText());
+        news.newsDescription.setText(item.getNewsDescription());
 
         String url = item.getNewsImage().getSrc();
         Glide.with(mContext)
@@ -71,8 +73,9 @@ public class NewsListAdapter extends BaseAdapter {
     }
 
     static class NewsItem {
-        TextView newsTitle;
         TextView newsDateTime;
+        TextView newsTitle;
+        TextView newsDescription;
         ImageView newsImage;
     }
 }

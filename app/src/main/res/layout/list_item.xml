@@ -11,19 +11,6 @@
         />
 
     <TextView
-        android:id="@+id/newsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/list_title_text_size"
-        android:textStyle="bold"
-        android:text="Title Test Title Test Title Test Title Test Title Test Title Test"
-        android:layout_below="@+id/newsDateTime"
-        android:layout_toRightOf="@+id/newsImage"
-        android:layout_toEndOf="@+id/newsImage"
-        android:layout_marginLeft="@dimen/list_title_text_margin"
-        android:layout_marginStart="@dimen/list_title_text_margin" />
-
-    <TextView
         android:id="@+id/newsDateTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,5 +21,30 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="@dimen/list_datetime_text_margin"
         android:layout_marginEnd="@dimen/list_datetime_text_margin" />
+
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/list_title_text_size"
+        android:textStyle="bold"
+        android:text="Title Test Title Test Title Test Title Test Title Test Title Test"
+        android:layout_below="@+id/newsDateTime"
+        android:layout_toRightOf="@+id/newsImage"
+        android:layout_toEndOf="@+id/newsImage"
+        android:layout_marginLeft="@dimen/list_title_text_margin"
+        android:layout_marginStart="@dimen/list_title_text_margin"
+        android:layout_alignRight="@+id/newsDateTime"
+        android:layout_alignEnd="@+id/newsDateTime" />
+
+    <TextView
+        android:id="@+id/newsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/list_description_text_size"
+        android:text="Description Test Description Test Description Test Description Test"
+        android:layout_below="@+id/newsTitle"
+        android:layout_alignLeft="@+id/newsTitle"
+        android:layout_alignStart="@+id/newsTitle" />
 
 </RelativeLayout>
