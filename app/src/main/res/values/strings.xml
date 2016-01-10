@@ -18,6 +18,8 @@
     <string name="email_my_mail">roma.sck@gmail.com</string>
     <string name="email_subject">DneprCom News report: </string>
     <string name="email_text">"\n I like your app."</string>
-    <string name="email_dialog_header">Send email...</string>
+    <string name="email_dialog_header">Send email</string>
+
+    <string name="imgview_description">news picture</string>
 
 </resources>

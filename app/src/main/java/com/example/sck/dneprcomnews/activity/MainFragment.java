@@ -38,8 +38,8 @@ public class MainFragment extends Fragment {
         EventBus.getDefault().register(this);
 
         ApiController.getNews();
-        mProgressBar.setVisibility(View.VISIBLE);
 
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -58,11 +58,11 @@ public class MainFragment extends Fragment {
      * @param response retrofit responce
      */
     public void onEvent(Response<NewsObject> response) {
-        mProgressBar.setVisibility(View.GONE);
-
         List<DneprComNews> mNewsList = response.body().getResults().getDneprComNews();
 
         mNewsListView.setAdapter(new NewsListAdapter(getActivity(), mNewsList));
+
+        mProgressBar.setVisibility(View.GONE);
     }
 
     /**
