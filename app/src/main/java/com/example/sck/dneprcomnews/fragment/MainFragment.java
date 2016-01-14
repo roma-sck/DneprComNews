@@ -59,13 +59,13 @@ public class MainFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedNewsLink = mNewsList.get(position).getNewsTitle().getHref();
                 Intent newActivity = new Intent(getActivity(), WebActivity.class);
-                newActivity.putExtra("url", selectedNewsLink);
+                newActivity.putExtra(getString(R.string.intent_extra_name_url), selectedNewsLink);
                 startActivity(newActivity);
             }
-
-            @SuppressWarnings("unused")
-            public void onClick(View v) {
-            }
+//
+//            @SuppressWarnings("unused")
+//            public void onClick(View v) {
+//            }
         });
 
         return view;

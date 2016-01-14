@@ -20,7 +20,7 @@ public class WebActivity extends Activity {
 
         // get url selected news from NewsListFragment
         Bundle bundle = this.getIntent().getExtras();
-        String url = bundle.getString("url");
+        String url = bundle.getString(getString(R.string.intent_extra_name_url));
 
 //        webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(url);

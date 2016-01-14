@@ -22,4 +22,6 @@
 
     <string name="imgview_description">news picture</string>
 
+    <string name="intent_extra_name_url">url</string>
+
 </resources>
