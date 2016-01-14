@@ -7,7 +7,7 @@ import android.webkit.WebViewClient;
 
 import com.example.sck.dneprcomnews.R;
 
-public class DetailActivity extends Activity {
+public class WebActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class DetailActivity extends Activity {
         Bundle bundle = this.getIntent().getExtras();
         String url = bundle.getString("url");
 
-        //webView.getSettings().setJavaScriptEnabled(true);
+//        webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(url);
     }
 

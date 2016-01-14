@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.sck.dneprcomnews.R;
-import com.example.sck.dneprcomnews.activity.DetailActivity;
+import com.example.sck.dneprcomnews.activity.WebActivity;
 import com.example.sck.dneprcomnews.adapter.NewsListAdapter;
 import com.example.sck.dneprcomnews.api.ApiController;
 import com.example.sck.dneprcomnews.models.DneprComNews;
@@ -58,7 +58,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedNewsLink = mNewsList.get(position).getNewsTitle().getHref();
-                Intent newActivity = new Intent(getActivity(), DetailActivity.class);
+                Intent newActivity = new Intent(getActivity(), WebActivity.class);
                 newActivity.putExtra("url", selectedNewsLink);
                 startActivity(newActivity);
             }
