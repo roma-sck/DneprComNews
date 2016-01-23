@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.sck.dneprcomnews.R;
 import com.example.sck.dneprcomnews.models.DneprComNews;
 
@@ -67,6 +68,7 @@ public class NewsListAdapter extends BaseAdapter {
                 .centerCrop()
                 .placeholder(R.drawable.img_placeholdr)
                 .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(news.newsImage);
 
         return view;
