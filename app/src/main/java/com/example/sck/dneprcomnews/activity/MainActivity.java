@@ -40,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
                 Uri.fromParts(getString(R.string.email_mailto), getString(R.string.email_my_mail), null));
         mailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
         mailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_text));
-        startActivity(Intent.createChooser(mailIntent, getString(R.string.email_dialog_header)));
+        
+        // Verify that the intent will resolve to an activity
+        if (mailIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(Intent.createChooser(mailIntent, getString(R.string.email_dialog_header)));
+        }
     }
 
     @Override
