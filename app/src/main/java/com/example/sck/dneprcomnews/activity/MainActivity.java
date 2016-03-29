@@ -1,6 +1,7 @@
 package com.example.sck.dneprcomnews.activity;
 
 import android.content.Intent;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.sck.dneprcomnews.R;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,9 +43,13 @@ public class MainActivity extends AppCompatActivity {
                 Uri.fromParts(getString(R.string.email_mailto), getString(R.string.email_my_mail), null));
         mailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
         mailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_text));
-        
-        // Verify that the intent will resolve to an activity
-        if (mailIntent.resolveActivity(getPackageManager()) != null) {
+
+        // Verify intent resolves
+        List<ResolveInfo> activities = getPackageManager().queryIntentActivities(mailIntent, 0);
+        boolean isIntentSafe = activities.size() > 0;
+
+        // Start an activity if it's safe
+        if (isIntentSafe) {
             startActivity(Intent.createChooser(mailIntent, getString(R.string.email_dialog_header)));
         }
     }
